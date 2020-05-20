@@ -157,6 +157,19 @@
 			</ul>
 		</div>
 		
+		
+				
+		<div title="新增模块" data-options="selected:true" style="padding:10px">
+			<ul id="newMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>新增模块</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'branch/find'}">机构管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
 		<c:if test="${activeUser.rolename == '超级管理员' }">
 			<div title="系统管理" style="padding:10px;">
 	
@@ -190,7 +203,8 @@
 						["工艺监控","工艺","工艺要求","工艺计划","工序"],
 						["物料监控","物料信息","物料收入","物料消耗"],
 						["质量监控","不合格品管理","成品计量质检","成品计数质检","工序计量质检","工序计数质检"],
-						["人员监控","部门管理","员工管理"]
+						["人员监控","部门管理","员工管理"],
+						["机构管理"]
 					  ];
 					  
 		function isContains(str, substr) {
@@ -289,6 +303,26 @@
 		}  
 		
 		$(function() {
+			
+			$('#newMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#newMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
 			/* Schedule Manager Tree onClick Event */
 			$('#scheduleMonitor').tree({
 				onClick : function(node) {

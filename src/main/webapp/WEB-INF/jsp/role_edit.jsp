@@ -152,7 +152,13 @@
 		<label><input name="permissionOption1" type="checkbox" value="211" />角色新增 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="212" />角色修改 </label> 
 		<label><input name="permissionOption1" type="checkbox" value="213" />角色删除 </label> 
-		<br><br><br>
+		<br><br>
+		
+		 <span style="font-weight: bold;">机构管理：</span> <label><input
+			name="permissionOption1" type="checkbox" value="275" />机构新增 </label> <label><input
+			name="permissionOption1" type="checkbox" value="276" />机构修改 </label> <label><input
+			name="permissionOption1" type="checkbox" value="277" />机构删除 </label> <br>
+		<br> <br>
 	</form>
 	<br><br>
 	<div style="padding:5px">
