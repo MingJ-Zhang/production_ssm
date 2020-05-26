@@ -202,6 +202,16 @@
 				</li>
 			</ul>
 		</div>
+		<div title="自我评价" data-options="selected:true" style="padding:10px">
+			<ul id="selfMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>自我评价</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'self/find'}">自我评价</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 		<div title="考核" data-options="selected:true" style="padding:10px">
 			<ul id="ataskMonitor" class="easyui-tree"
 				data-options="animate:true,lines:true">
@@ -352,6 +362,25 @@
 				onClick : function(node) {
 					/* debugger; */
 					if ($('#newMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#selfMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#selfMonitor').tree("isLeaf", node.target)) {
 						var tabs2 = $("#tabs");
 						var tab2 = tabs2.tabs("getTab", node.text);
 						if (tab2) {

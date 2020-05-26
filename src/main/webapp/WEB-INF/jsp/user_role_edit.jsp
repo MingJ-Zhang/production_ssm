@@ -149,6 +149,9 @@
 			name="permissionOption3" type="checkbox" value="291" />新增 </label> <label><input
 			name="permissionOption3" type="checkbox" value="292" />删除 </label> <br>
 		<br>
+		<span style="font-weight: bold;">自我评价：</span> <label><input
+			name="permissionOption3" type="checkbox" value="601" />新增 </label>  <br>
+		<br>
 	</form>
 	<br>
 	<br>

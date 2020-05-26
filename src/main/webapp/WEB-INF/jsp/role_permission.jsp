@@ -140,6 +140,9 @@
 			name="permissionOption" type="checkbox" value="291" />新增 </label> <label><input
 			name="permissionOption" type="checkbox" value="292" />删除 </label> <br>
 		<br>
+		<span style="font-weight: bold;">自我评价：</span> <label><input
+			name="permissionOption" type="checkbox" value="601" />新增 </label>  <br>
+		<br>
 	</form>
 	<div style="padding: 5px">
 		<a href="javascript:void(0)" class="easyui-linkbutton"
