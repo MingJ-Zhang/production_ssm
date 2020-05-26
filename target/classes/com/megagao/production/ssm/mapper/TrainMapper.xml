@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.megagao.production.ssm.mapper.TrainMapper" >
+  	<select id="find"  resultType="Train">
+  		select * from train
+  	</select>
+	
+	<select id="searchTrainByid" resultType="Train"  parameterType="int">
+		select * from train where id like #{id}
+	</select>
+	
+	<select id="searchTrainByname" resultType="Train"  parameterType="String">
+		select * from train where name like #{name}
+	</select>
+
+	<select id="searchTrainBymode" resultType="Train"  parameterType="String">
+		select * from train where mode like #{mode}
+	</select>
+	
+	
+	<delete id="delete" parameterType="int">
+		delete from train where id = #{id}
+	</delete>
+	
+	  <!-- 批量删除 -->
+	<delete id="deleteBatch">
+	delete from train where id in 
+	<foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+	<select id="load" resultType="Train"   parameterType="int">
+		select * from train where id=#{id}
+	</select>
+	
+	<insert id="add" parameterType="Train" >
+		insert into train(name,mode,teacher,start_time,end_time,address) values(#{name},#{mode},#{teacher},#{start_time},#{end_time},#{address})
+	</insert>
+</mapper>

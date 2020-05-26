@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.megagao.production.ssm.mapper.ExamMapper" >
+	<select id="find" resultType="Exam">
+		select * from t_exam
+	</select>
+	
+		<select id="getExamById" resultType="Exam" parameterType="String">
+ 		select * from t_exam where id =#{id}
+ 	</select>
+ 	
+ 	<insert id="add" parameterType="Exam">
+  			insert into t_exam
+  			(id,title,teacher,create_time,over_time,address,type,context,result,others)
+  			values
+  			(#{id},#{title},#{teacher},#{create_time},#{over_time},#{address},#{type},#{context},#{result},#{others})
+  	</insert>
+  	
+  		<!-- 批量删除 -->
+	<delete id="deleteBatch">
+		DELETE
+		FROM
+			t_exam
+		WHERE
+			id IN
+		<foreach collection="array" item="id" open="(" close=")" separator=",">
+			#{id}
+		</foreach>
+	</delete>
+	
+  <update id="updateByPrimaryKey" parameterType="com.megagao.production.ssm.domain.Exam" >
+    UPDATE t_exam SET 
+     `title`=#{title}, `teacher`=#{teacher}, `create_time`=#{create_time}, `over_time`=#{over_time}, `address`=#{address}, `type`=#{type}, `context`=#{context}, `result`=#{result}, `others`=#{others} 
+    WHERE id =#{id};
+  </update>
+</mapper>

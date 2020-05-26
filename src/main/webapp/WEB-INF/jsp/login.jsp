@@ -32,7 +32,7 @@
 					<!--USERNAME -->
 					<div>
 						<div class="input">
-							<input class="input_all name" name="name" id="username" placeholder="用户名" type="text"
+							<input class="input_all name" name="name" id="username" placeholder="用户名" type="text" value="王经理"
 								   onFocus="this.className='input_all name_now';"
 								   onBlur="this.className='input_all name'" maxLength="24" />
 						</div>
@@ -45,7 +45,7 @@
 					<!-- PASSWORD -->
 					<div>
 						<div class="input">
-							<input class="input_all password" name="password" id="password" type="password"
+							<input class="input_all password" name="password" id="password" type="password" value="11"
 								   placeholder="密码" onFocus="this.className='input_all password_now';"
 								   onBlur="this.className='input_all password'" maxLength="24" />
 						</div>

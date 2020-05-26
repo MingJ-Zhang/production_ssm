@@ -169,6 +169,50 @@
 				</li>
 			</ul>
 		</div>
+		<div title="培训管理" data-options="selected:true" style="padding:10px">
+			<ul id="trainMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>培训模块</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'train/find'}">培训管理</li>
+					</ul>
+					<ul>
+						<li id=65 data-options="attributes:{'url':'assessment/find'}">培训考核管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div title="薪酬管理" data-options="selected:true" style="padding:10px">
+			<ul id="salaryMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>薪酬模块</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'salary/find'}">薪酬管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div title="考试" data-options="selected:true" style="padding:10px">
+			<ul id="examMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考试模块</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'exam/find'}">考试管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div title="考核" data-options="selected:true" style="padding:10px">
+			<ul id="ataskMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>考试模块</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'atask/find'}">考核任务管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
 		
 		<c:if test="${activeUser.rolename == '超级管理员' }">
 			<div title="系统管理" style="padding:10px;">
@@ -308,6 +352,82 @@
 				onClick : function(node) {
 					/* debugger; */
 					if ($('#newMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#trainMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#trainMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#ataskMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#ataskMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#examMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#examMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#salaryMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#salaryMonitor').tree("isLeaf", node.target)) {
 						var tabs2 = $("#tabs");
 						var tab2 = tabs2.tabs("getTab", node.text);
 						if (tab2) {

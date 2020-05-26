@@ -137,8 +137,19 @@
 		<br> <span style="font-weight: bold;">机构管理：</span> <label><input
 			name="permissionOption2" type="checkbox" value="275" />机构新增 </label> <label><input
 			name="permissionOption2" type="checkbox" value="276" />机构修改 </label> <label><input
-			name="permissionOption2" type="checkbox" value="277" />机构删除 </label> <br>
-		<br> <br>
+			name="permissionOption2" type="checkbox" value="277" />机构删除 </label> <br><br>
+		<span style="font-weight: bold;">薪酬管理：</span> <label><input
+			name="permissionOption2" type="checkbox" value="402" />薪酬新增 </label> <label><input
+			name="permissionOption2" type="checkbox" value="403" />薪酬删除 </label> <br> <br>
+			<span style="font-weight: bold;">考试管理：</span> <label><input
+			name="permissionOption2" type="checkbox" value="301" />考试新增 </label> <label><input
+			name="permissionOption2" type="checkbox" value="302" />考试删除 </label> <br> <br>
+			<span style="font-weight: bold;">考核任务：</span> <label><input
+			name="permissionOption2" type="checkbox" value="502" />新增 </label> <label><input
+			name="permissionOption2" type="checkbox" value="503" />删除 </label> <br> <br>
+			<span style="font-weight: bold;">培训管理：</span> <label><input
+			name="permissionOption2" type="checkbox" value="291" />新增 </label> <label><input
+			name="permissionOption2" type="checkbox" value="292" />删除 </label> <br> <br>
 	</form>
 	<br>
 	<br>

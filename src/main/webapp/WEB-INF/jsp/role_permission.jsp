@@ -12,10 +12,10 @@
 	src="js/kindeditor-4.1.10/lang/zh_CN.js"></script>
 <div style="padding: 10px 10px 10px 10px">
 	<form id="permissionForm" class="itemForm" method="post">
-		<input type="hidden" name="roleId" /> <span style="font-weight: bold;">订单管理：</span>
-		<label><input name="permissionOption" type="checkbox"
-			value="11" />订单新增 </label> <label><input name="permissionOption"
-			type="checkbox" value="12" />订单修改 </label> <label><input
+		<input type="hidden" name="roleId" /> <span
+			style="font-weight: bold;">订单管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="11" />订单新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="12" />订单修改 </label> <label><input
 			name="permissionOption" type="checkbox" value="13" />订单删除 </label> <br>
 		<br> <span style="font-weight: bold;">客户管理：</span> <label><input
 			name="permissionOption" type="checkbox" value="21" />客户新增 </label> <label><input
@@ -125,7 +125,21 @@
 			name="permissionOption" type="checkbox" value="275" />机构新增 </label> <label><input
 			name="permissionOption" type="checkbox" value="276" />机构修改 </label> <label><input
 			name="permissionOption" type="checkbox" value="277" />机构删除 </label> <br>
-		<br> <br>
+		<br> <span style="font-weight: bold;">薪酬管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="402" />机构新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="403" />机构删除 </label> <br>
+		<br> <span style="font-weight: bold;">考试管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="301" />考试新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="302" />考试删除 </label> <br>
+		<br>
+		<span style="font-weight: bold;">考核管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="502" />新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="503" />删除 </label> <br>
+		<br>
+		<span style="font-weight: bold;">培训管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="291" />新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="292" />删除 </label> <br>
+		<br>
 	</form>
 	<div style="padding: 5px">
 		<a href="javascript:void(0)" class="easyui-linkbutton"
