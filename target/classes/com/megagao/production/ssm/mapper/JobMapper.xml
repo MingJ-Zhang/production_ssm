@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.megagao.production.ssm.mapper.JobMapper" >
+  	<select id="find" resultType="Job">
+  		select * from t_work
+  	</select>
+  	<insert id="add" parameterType="Job">
+		INSERT INTO `t_work` (`idW`, `title`, `people`, `startDate`, `beizhu`) VALUES (#{idW}, #{title}, #{people}, #{startDate}, #{beizhu});
+	</insert>	
+	
+	
+	<delete id="deleteBatch">
+	delete from t_work where idW in 
+	<foreach collection="array" item="idW" open="(" close=")" separator=",">
+			#{idW}
+		</foreach>
+	</delete>
+</mapper>

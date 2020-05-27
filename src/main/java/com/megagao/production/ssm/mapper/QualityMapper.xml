@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.megagao.production.ssm.mapper.QualityMapper" >
+  	
+  	<select id="find"  resultType="Quality">
+  		select * from t_quality
+  	</select>
+		
+	<delete id="delete" parameterType="String">
+		delete from t_quality where id = #{id}
+	</delete>
+	
+	<insert id="add" parameterType="Quality" >
+		insert into t_quality(id,documentName,prefix,dateType,length,examples,defaultRule,type) 
+		 values(#{id},#{documentName},#{prefix},#{dateType},#{length},#{examples},#{defaultRule},#{type})
+	</insert>
+	
+	  <!-- 批量删除 -->
+	<delete id="deleteBatch">
+	  delete from t_quality where id in 
+	     <foreach collection="array" item="id" open="(" close=")" separator=",">
+			 #{id}
+		 </foreach>
+	</delete>
+	
+
+</mapper>

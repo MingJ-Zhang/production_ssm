@@ -212,6 +212,29 @@
 				</li>
 			</ul>
 		</div>
+		<div title="绩效管理" data-options="selected:true" style="padding:10px">
+			<ul id="jobMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>绩效管理</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'job/find'}">绩效管理</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div title="质检管理" data-options="selected:true" style="padding:10px">
+			<ul id="qualityMonitor" class="easyui-tree"
+				data-options="animate:true,lines:true">
+				<li><span>质检管理</span>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'quality/find'}">质检管理</li>
+					</ul>
+					<ul>
+						<li id=63 data-options="attributes:{'url':'report/find'}">质检报告</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 		<div title="考核" data-options="selected:true" style="padding:10px">
 			<ul id="ataskMonitor" class="easyui-tree"
 				data-options="animate:true,lines:true">
@@ -362,6 +385,44 @@
 				onClick : function(node) {
 					/* debugger; */
 					if ($('#newMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#qualityMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#qualityMonitor').tree("isLeaf", node.target)) {
+						var tabs2 = $("#tabs");
+						var tab2 = tabs2.tabs("getTab", node.text);
+						if (tab2) {
+							tabs2.tabs("select", node.text);
+						} else {
+							tabs2.tabs('add', {
+								title : node.text,
+								href : node.attributes.url,
+								closable : true,
+								bodyCls : "content"
+							});
+						}
+					}
+				}
+			});
+			$('#jobMonitor').tree({
+				onClick : function(node) {
+					/* debugger; */
+					if ($('#jobiMonitor').tree("isLeaf", node.target)) {
 						var tabs2 = $("#tabs");
 						var tab2 = tabs2.tabs("getTab", node.text);
 						if (tab2) {

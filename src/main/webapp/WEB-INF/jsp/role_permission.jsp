@@ -143,6 +143,17 @@
 		<span style="font-weight: bold;">自我评价：</span> <label><input
 			name="permissionOption" type="checkbox" value="601" />新增 </label>  <br>
 		<br>
+		<span style="font-weight: bold;">绩效管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="702" />新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="703" />删除 </label> <br>
+		<br>
+		<span style="font-weight: bold;">质检管理：</span> <label><input
+			name="permissionOption" type="checkbox" value="801" />新增 </label> <label><input
+			name="permissionOption" type="checkbox" value="802" />删除 </label> <br>
+		<br>
+		<span style="font-weight: bold;">质检报告：</span> <label><input
+			name="permissionOption" type="checkbox" value="901" />新增 </label> <br>
+		<br>
 	</form>
 	<div style="padding: 5px">
 		<a href="javascript:void(0)" class="easyui-linkbutton"
